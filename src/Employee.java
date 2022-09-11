@@ -3,8 +3,8 @@ public class Employee {
     private String name;
     private int department;
     private double salary;
-    private String employeeID;
-    private static String uniqueID = "0";
+    private int employeeID;
+    private static int uniqueID = Integer.parseInt("0");
 
     public Employee(String name, int department, double salary) {
         this.name = name;
@@ -45,14 +45,14 @@ public class Employee {
         salary += raise;
     }
 
-    public static String getNextUniqueID() {
-        int id = Integer.parseInt(uniqueID);
+    public static int getNextUniqueID() {
+        int id = Integer.parseInt(String.valueOf(uniqueID));
         ++id;
-        uniqueID = Integer.toString(id);
-        return uniqueID;
+        uniqueID = Integer.parseInt(Integer.toString(id));
+        return Integer.parseInt(String.valueOf(uniqueID));
     }
 
-    public String getEmployeeID() {
+    public int getEmployeeID() {
         return employeeID;
     }
 
